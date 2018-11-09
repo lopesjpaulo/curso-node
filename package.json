@@ -1,0 +1,19 @@
+{
+  "name": "curso-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lopesjpaulo/curso-node.git"
+  },
+  "author": "João Paulo Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lopesjpaulo/curso-node/issues"
+  },
+  "homepage": "https://github.com/lopesjpaulo/curso-node#readme"
+}
