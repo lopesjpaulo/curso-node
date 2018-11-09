@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lopesjpaulo/curso-node/issues"
   },
-  "homepage": "https://github.com/lopesjpaulo/curso-node#readme"
+  "homepage": "https://github.com/lopesjpaulo/curso-node#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
