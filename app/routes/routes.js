@@ -1,6 +1,13 @@
-module.exports = function(app){
+var dbConnection = require('../../config/database');
+
+module.exports = function(app, connection){
     app.get('/', function(req, res){
-        res.render('inicial');
+
+        var connection = dbConnection();
+
+        connection.query('select * from ci_contatos', function(error, result){
+            res.render('./noticias/noticias', {noticias : result});
+        })
     });
     app.get('/noticias', function(req, res){
         res.render('./noticias/noticias');
