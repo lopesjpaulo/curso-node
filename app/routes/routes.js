@@ -1,18 +1,29 @@
-var dbConnection = require('../../config/database');
-
-module.exports = function(app, connection){
+module.exports = function(app){
+    
     app.get('/', function(req, res){
 
-        var connection = dbConnection();
-
-        connection.query('select * from ci_contatos', function(error, result){
+        app.config.database().query('select * from ci_usuarios', function(error, result){
             res.render('./noticias/noticias', {noticias : result});
         })
+
     });
+
     app.get('/noticias', function(req, res){
-        res.render('./noticias/noticias');
+
+        var connection = app.config.database();
+        var noticiasModel = app.app.models.noticiasModel;
+
+        noticiasModel.getNoticias(connection, function(error, result){
+            res.render('./noticias/noticias', {noticias : result});
+        });
+
     });
-    app.get('/noticia', function(req, res){
-        res.render('./noticias/noticia');
+
+    app.get('/noticia/:id', function(req, res){
+        
+        app.config.database().query('select * from ci_usuarios where id = ' + req.params.id, function(error, result){
+            res.render('./noticias/noticia', {noticia : result});
+        })
     });
+
 };

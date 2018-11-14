@@ -1,7 +1,7 @@
 var app = require('./config/server');
 
-var routes = require('./app/routes/routes')(app);
+//var routes = require('./app/routes/routes')(app);
 
 app.listen(3000, function(){
-    console.log('servidor rodandos');
+    console.log('servidor rodando');
 });
